@@ -4,7 +4,7 @@ repository: https://github.com/KosukeSaigusa/flutterfire-commons
 
 packages:
   - packages/**
-  - '*'
+  - packages/**/example/*
 
 ide:
   intellij: true
