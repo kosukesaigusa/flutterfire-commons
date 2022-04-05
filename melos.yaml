@@ -6,6 +6,10 @@ packages:
   - packages/**
   - '*'
 
+ide:
+  intellij: true
+  vscode: true
+
 scripts:
   clean:
     run: melos exec -- "flutter clean"
@@ -15,3 +19,7 @@ scripts:
 
   clean:pub:get:
     run: melos exec -- "flutter clean && flutter pub get"
+
+  analyze: melos exec -- dart analyze .
+
+  format: bash ./scripts/dartfmt.sh
