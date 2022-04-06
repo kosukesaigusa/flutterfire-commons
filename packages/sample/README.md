@@ -1,1 +1,1 @@
-/Users/kosukesaigusa/dev_private/flutterfire_commons/README.md
+../../README.md
