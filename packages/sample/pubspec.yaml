@@ -1,7 +1,6 @@
-name: flutterfire_commons
+name: sample
 description: A new Flutter project.
 version: 0.0.1
-homepage:
 
 environment:
   sdk: '>=2.16.2 <3.0.0'
