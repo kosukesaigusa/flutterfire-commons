@@ -1,6 +1,6 @@
 # Example
 
-A sample project of `packages/sample`.
+A sample project of `packages/utils`.
 
 ```yaml
 melos run pub:get

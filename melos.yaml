@@ -8,7 +8,7 @@ packages:
 
 ide:
   intellij: true
-  vscode: true
+  # vscode: true
 
 scripts:
   clean:

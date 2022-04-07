@@ -1,3 +1,5 @@
 {
+  "dart.flutterSdkPath": "~/.asdf/installs/flutter/2.10.4-stable",
+  "dart.sdkPath": "~/.asdf/installs/dart/2.16.2/dart-sdk",
   "dart.runPubGetOnPubspecChanges": false
 }
