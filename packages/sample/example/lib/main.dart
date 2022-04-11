@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
 
-  static const path = '/x-x-x/';
+  static const path = '/my-home/';
   static const name = 'MyHome';
 
   @override
@@ -31,7 +31,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+  int _addingCounter = 0;
+  int _subtractingCounter = 10;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,15 +41,26 @@ class MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('Counter: $_counter'),
+            Text('Adding Counter: $_addingCounter'),
             const SizedBox(height: 16),
             ElevatedButton(
               onPressed: () {
                 setState(() {
-                  _counter = Calculator().addOne(_counter);
+                  _addingCounter = Calculator().addOne(_addingCounter);
                 });
               },
-              child: const Text('Press me!'),
+              child: const Text('Add one!'),
+            ),
+            const SizedBox(height: 32),
+            Text('Subtracting Counter: $_subtractingCounter'),
+            const SizedBox(height: 16),
+            ElevatedButton(
+              onPressed: () {
+                setState(() {
+                  _subtractingCounter = Calculator().subtractOne(_subtractingCounter);
+                });
+              },
+              child: const Text('Subtract one!'),
             ),
           ],
         ),
