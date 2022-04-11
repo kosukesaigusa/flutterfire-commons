@@ -1,1 +1,3 @@
-export './calculator.dart';
+library flutterfire_commons;
+
+export './src/calculator.dart';
