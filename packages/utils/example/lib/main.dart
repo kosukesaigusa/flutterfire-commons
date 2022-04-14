@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:utils/utils.dart';
@@ -39,10 +38,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class MyHomePageState extends State<MyHomePage> {
-  int _addingCounter = 0;
-  int _subtractingCounter = 10;
-  final DocumentReference<Map<String, dynamic>> _counterRef =
-      FirebaseFirestore.instance.collection('sample').doc('counter');
+  final year = 2020;
+  final month = 2;
 
   @override
   Widget build(BuildContext context) {
@@ -52,60 +49,10 @@ class MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('Adding Counter: $_addingCounter'),
-            const SizedBox(height: 8),
-            ElevatedButton(
-              onPressed: () {
-                setState(() {
-                  _addingCounter = Calculator().addOne(_addingCounter);
-                });
-              },
-              child: const Text('Add one!'),
-            ),
-            const SizedBox(height: 16),
-            Text('Subtracting Counter: $_subtractingCounter'),
-            const SizedBox(height: 8),
-            ElevatedButton(
-              onPressed: () {
-                setState(() {
-                  _subtractingCounter = Calculator().subtractOne(_subtractingCounter);
-                });
-              },
-              child: const Text('Subtract one!'),
-            ),
-            const SizedBox(height: 16),
-            StreamBuilder<int>(
-              stream: _firestoreCounter,
-              builder: (context, snapshot) {
-                if (snapshot.connectionState == ConnectionState.waiting) {
-                  return const Text('Waiting...');
-                }
-                if (!snapshot.hasData) {
-                  return const Text('Adding Counter (Firestore): 0');
-                }
-                final counter = snapshot.data!;
-                return Text('Adding Counter (Firestore): $counter');
-              },
-            ),
-            const SizedBox(height: 8),
-            ElevatedButton(
-              onPressed: () async {
-                await FirebaseFirestore.instance.collection('sample').doc('counter').set(
-                  <String, dynamic>{'counter': FieldValue.increment(1)},
-                  SetOptions(merge: true),
-                );
-              },
-              child: const Text('Add one!'),
-            ),
+            Text('$year 年 $month 月の最終日は ${lastDayOfMonth(year, month)}日です。'),
           ],
         ),
       ),
     );
-  }
-
-  Stream<int> get _firestoreCounter {
-    return _counterRef.snapshots().map((ds) {
-      return (ds.data() ?? <String, dynamic>{'counter': 0})['counter'] as int;
-    });
   }
 }
