@@ -4,11 +4,10 @@ repository: https://github.com/KosukeSaigusa/flutterfire-commons
 
 packages:
   - packages/**
-  - packages/**/example/*
+  - packages/**/example/**
 
 ide:
   intellij: true
-  # vscode: true
 
 scripts:
   clean:
