@@ -28,6 +28,13 @@
       "request": "launch",
       "type": "dart",
       "args": ["--debug"]
+    },
+    {
+      "name": "Debug extensions/example",
+      "program": "packages/extensions/example/lib/main.dart",
+      "request": "launch",
+      "type": "dart",
+      "args": ["--debug"]
     }
   ]
 }
