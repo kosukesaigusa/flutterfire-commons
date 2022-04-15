@@ -42,7 +42,7 @@ class MyHomePageState extends State<MyHomePage> {
   int _addingCounter = 0;
   int _subtractingCounter = 10;
   final DocumentReference<Map<String, dynamic>> _counterRef =
-      FirebaseFirestore.instance.collection('sample').doc('counter');
+      FirebaseFirestore.instance.collection('counter').doc('counter');
 
   @override
   Widget build(BuildContext context) {
@@ -90,7 +90,7 @@ class MyHomePageState extends State<MyHomePage> {
             const SizedBox(height: 8),
             ElevatedButton(
               onPressed: () async {
-                await FirebaseFirestore.instance.collection('sample').doc('counter').set(
+                await _counterRef.set(
                   <String, dynamic>{'counter': FieldValue.increment(1)},
                   SetOptions(merge: true),
                 );
