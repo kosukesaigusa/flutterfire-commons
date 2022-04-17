@@ -45,6 +45,15 @@
       "args": [
         "--debug"
       ]
+    },
+    {
+      "name": "Debug gallery/example",
+      "program": "packages/gallery/example/lib/main.dart",
+      "request": "launch",
+      "type": "dart",
+      "args": [
+        "--debug"
+      ]
     }
   ]
 }
