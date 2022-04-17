@@ -68,7 +68,8 @@ class MyHomePageState extends State<MyHomePage> {
             ElevatedButton(
               onPressed: () {
                 setState(() {
-                  _subtractingCounter = Calculator().subtractOne(_subtractingCounter);
+                  _subtractingCounter =
+                      Calculator().subtractOne(_subtractingCounter);
                 });
               },
               child: const Text('Subtract one!'),
