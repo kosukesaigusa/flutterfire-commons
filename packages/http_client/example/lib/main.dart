@@ -1,7 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:http_client/http_client.dart';
 
 import 'firebase_options.dart';
 
@@ -53,51 +52,51 @@ class MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text('Adding Counter: $_addingCounter'),
-            const SizedBox(height: 8),
-            ElevatedButton(
-              onPressed: () {
-                setState(() {
-                  _addingCounter = Calculator().addOne(_addingCounter);
-                });
-              },
-              child: const Text('Add one!'),
-            ),
-            const SizedBox(height: 16),
-            Text('Subtracting Counter: $_subtractingCounter'),
-            const SizedBox(height: 8),
-            ElevatedButton(
-              onPressed: () {
-                setState(() {
-                  _subtractingCounter =
-                      Calculator().subtractOne(_subtractingCounter);
-                });
-              },
-              child: const Text('Subtract one!'),
-            ),
-            const SizedBox(height: 16),
-            StreamBuilder<int>(
-              stream: _firestoreCounter,
-              builder: (context, snapshot) {
-                if (snapshot.connectionState == ConnectionState.waiting) {
-                  return const Text('Waiting...');
-                }
-                if (!snapshot.hasData) {
-                  return const Text('Adding Counter (Firestore): 0');
-                }
-                final counter = snapshot.data!;
-                return Text('Adding Counter (Firestore): $counter');
-              },
-            ),
-            const SizedBox(height: 8),
-            ElevatedButton(
-              onPressed: () async {
-                await _counterRef.set(
-                  <String, dynamic>{'counter': FieldValue.increment(1)},
-                  SetOptions(merge: true),
-                );
-              },
-              child: const Text('Add one!'),
-            ),
+            // const SizedBox(height: 8),
+            // ElevatedButton(
+            //   onPressed: () {
+            //     setState(() {
+            //       _addingCounter = Calculator().addOne(_addingCounter);
+            //     });
+            //   },
+            //   child: const Text('Add one!'),
+            // ),
+            // const SizedBox(height: 16),
+            // Text('Subtracting Counter: $_subtractingCounter'),
+            // const SizedBox(height: 8),
+            // ElevatedButton(
+            //   onPressed: () {
+            //     setState(() {
+            //       _subtractingCounter =
+            //           Calculator().subtractOne(_subtractingCounter);
+            //     });
+            //   },
+            //   child: const Text('Subtract one!'),
+            // ),
+            // const SizedBox(height: 16),
+            // StreamBuilder<int>(
+            //   stream: _firestoreCounter,
+            //   builder: (context, snapshot) {
+            //     if (snapshot.connectionState == ConnectionState.waiting) {
+            //       return const Text('Waiting...');
+            //     }
+            //     if (!snapshot.hasData) {
+            //       return const Text('Adding Counter (Firestore): 0');
+            //     }
+            //     final counter = snapshot.data!;
+            //     return Text('Adding Counter (Firestore): $counter');
+            //   },
+            // ),
+            // const SizedBox(height: 8),
+            // ElevatedButton(
+            //   onPressed: () async {
+            //     await _counterRef.set(
+            //       <String, dynamic>{'counter': FieldValue.increment(1)},
+            //       SetOptions(merge: true),
+            //     );
+            //   },
+            //   child: const Text('Add one!'),
+            // ),
           ],
         ),
       ),
