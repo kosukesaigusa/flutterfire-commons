@@ -1,6 +1,7 @@
 {
   "version": "0.2.0",
   "configurations": [
+
     {
       "name": "Debug sample/example",
       "program": "packages/sample/example/lib/main.dart",
@@ -54,6 +55,15 @@
       "args": [
         "--debug"
       ]
-    }
+    },
+    {
+      "name": "Debug styles/example",
+      "program": "packages/styles/example/lib/main.dart",
+      "request": "launch",
+      "type": "dart",
+      "args": [
+        "--debug"
+      ]
+    },
   ]
 }
