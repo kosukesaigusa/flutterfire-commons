@@ -1,14 +1,13 @@
 // This is a generated file; do not edit or check into version control.
-FLUTTER_ROOT=/Users/kosukesaigusa/.asdf/installs/flutter/2.10.4-stable
-FLUTTER_APPLICATION_PATH=/Users/kosukesaigusa/dev_private/flutterfire_commons/packages/sample/example
+FLUTTER_ROOT=/Users/tatsuyayamamoto/flutter
+FLUTTER_APPLICATION_PATH=/Users/tatsuyayamamoto/workspace/flutterfire-commons/packages/sample/example
 COCOAPODS_PARALLEL_CODE_SIGN=true
-FLUTTER_TARGET=/Users/kosukesaigusa/dev_private/flutterfire_commons/packages/sample/example/lib/main.dart
+FLUTTER_TARGET=lib/main.dart
 FLUTTER_BUILD_DIR=build
-FLUTTER_BUILD_NAME=1.0.0
-FLUTTER_BUILD_NUMBER=1
+FLUTTER_BUILD_NAME=0.0.1
+FLUTTER_BUILD_NUMBER=0.0.1
 EXCLUDED_ARCHS[sdk=iphonesimulator*]=i386
-DART_DEFINES=RkxVVFRFUl9XRUJfQVVUT19ERVRFQ1Q9dHJ1ZQ==
 DART_OBFUSCATION=false
-TRACK_WIDGET_CREATION=true
+TRACK_WIDGET_CREATION=false
 TREE_SHAKE_ICONS=false
-PACKAGE_CONFIG=/Users/kosukesaigusa/dev_private/flutterfire_commons/packages/sample/example/.dart_tool/package_config.json
+PACKAGE_CONFIG=.packages
