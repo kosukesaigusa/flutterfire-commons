@@ -147,7 +147,7 @@ asdf で Flutter の SDK バージョンを管理する方法は、この記事�
 
 を参考にしてください。asdf でなくても、fvm や（混乱しなければ）マシンのグローバルで使用する Flutter SDK でも構いません。
 
-また、皆さんの .vscode などのエディタの設定が異なることを考慮して、`.vscode/settings.json` は gitignore することにしています。代わりに、`.vscode/base_settings.json` で asdf を使用している人用の設定のサンプルはおいているので、
+また、皆さんの .vscode などのエディタの設定が異なることを考慮して、`.vscode/settings.json` は gitignore することにしています。代わりに、`.vscode/base_settings.json` で asdf を使用している人用の設定のサンプル、 `base_fvm_settings` でfvmを使用している人用の設定のサンプルはおいているので、
 
 ```shell
 cd ~/workspace
