@@ -55,6 +55,5 @@
         "--debug"
       ]
     }
-  ],
-  "dart.flutterSdkPaths": [".fvm/flutter_sdk"]
+  ]
 }
