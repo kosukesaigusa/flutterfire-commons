@@ -1,0 +1,24 @@
+name: example_widgets
+description: A new Flutter project.
+publish_to: 'none'
+version: 0.0.1
+
+environment:
+  sdk: '>=2.16.2 <3.0.0'
+  flutter: '>=2.10.4'
+
+dependencies:
+  cloud_firestore:
+  firebase_core:
+  flutter:
+    sdk: flutter
+  widgets:
+    path: ../
+
+dev_dependencies:
+  flutter_lints: ^1.0.0
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
