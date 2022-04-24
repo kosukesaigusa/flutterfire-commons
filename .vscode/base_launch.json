@@ -49,6 +49,13 @@
 			"request": "launch",
 			"type": "dart",
 			"args": ["--debug"]
+		},
+		{
+			"name": "Debug dark_theme_sample/example",
+			"program": "packages/dark_theme_sample/example/lib/main.dart",
+			"request": "launch",
+			"type": "dart",
+			"args": ["--debug"]
 		}
 	]
 }
