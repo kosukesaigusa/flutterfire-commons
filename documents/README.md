@@ -193,7 +193,13 @@ sh ./scripts/create_package_template.sh
 
 1, 2, 3 のすべてを揃えて開発できるとすごいですが、1, 2 が難しいのでとりあえず 3 だけ！で PR にしてもらっても全然大丈夫です。
 
-`packages/your-task-dir/example` のサンプルアプリをデバッグ起動する必要があると思うので、VSCode の方は（Android Studio の方も真似して書いてくださると大変ありがたいです）`.vscode/launch.json` に追記してください。
+`packages/your-task-dir/example` のサンプルアプリをデバッグ起動する必要があると思うので、VSCode の方は（Android Studio の方も真似して書いてくださると大変ありがたいです）`.vscode/base_launch.json` に追記してください。
+`.vscode/launch.json` は gitignore することにしているため、`.vscode/base_launch.json` を参考に、`.vscode/launch.json` を以下のコマンドなどで作成して、サンプルアプリをデバッグ起動できるようにしてみてください。
+
+```shell
+cd ~/workspace
+cp .vscode/base_launch.json .vscode/launch.json
+```
 
 ### Firebase プロジェクトとの接続
 
