@@ -341,9 +341,9 @@ extension StatusCodeExtension on StatusCode {
       case StatusCode.SeeOther:
         return 'その他を参照';
       case StatusCode.NotModified:
-        return 'Not Modified';
+        return '非修飾';
       case StatusCode.UseProxy:
-        return 'Use Proxy';
+        return 'プロキシを使用する';
       case StatusCode.TemporaryRedirect:
         return '一時的なリダイレクト';
       case StatusCode.PermanentRedirect:
@@ -411,13 +411,13 @@ extension StatusCodeExtension on StatusCode {
       case StatusCode.HTTPVersionNotSupported:
         return 'HTTPバージョンはサポートされていません';
       case StatusCode.VariantAlsoNegotiates:
-        return 'Variant Also Negotiates';
+        return 'バリアントも交渉中';
       case StatusCode.InsufficientStorage:
-        return 'Insufficient Storage';
+        return 'ストレージの不足';
       case StatusCode.LoopDetected:
         return 'ループが検出されました';
       case StatusCode.NotExtended:
-        return 'Not Extended';
+        return '拡張なし';
       case StatusCode.NetworkAuthenticationRequired:
         return 'ネットワーク認証が必要です';
       case StatusCode.Unknown:
