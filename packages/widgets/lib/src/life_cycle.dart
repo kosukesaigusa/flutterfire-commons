@@ -4,11 +4,11 @@ import 'package:flutter/material.dart';
 class LifeCycle extends StatefulWidget {
   const LifeCycle({
     Key? key,
+    required this.child,
     this.onInactive,
     this.onResumed,
     this.onPaused,
     this.onDetached,
-    required this.child,
   }) : super(key: key);
 
   final Widget child;
@@ -24,8 +24,8 @@ class LifeCycle extends StatefulWidget {
 class _LifeCycleState extends State<LifeCycle> with WidgetsBindingObserver {
   @override
   void initState() {
-    WidgetsBinding.instance!.addObserver(this);
     super.initState();
+    WidgetsBinding.instance!.addObserver(this);
   }
 
   @override
