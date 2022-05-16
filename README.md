@@ -15,6 +15,8 @@ and the Flutter guide for
 
 Methods can be called according to State when AppLifecycleState changes
 
+![CleanShot 2022-05-12 at 22 20 23](https://user-images.githubusercontent.com/43805056/168607586-b3e0fa3c-0821-41fd-88c0-f4cf59e6748f.gif)
+
 ## Usage
 
 ### LifeCycle
@@ -23,16 +25,16 @@ Methods can be called according to State when AppLifecycleState changes
 LifeCycle(
     child: const Text('Child'),
     onInactive: () {
-        debugPrint('CurrentState: inactive');
+        debugPrint('state is inactive');
     },
     onResumed: () {
-        debugPrint('CurrentState: resumed');
+        debugPrint('state is resumed');
     },
     onPaused: () {
-        debugPrint('CurrentState: paused');
+        debugPrint('state is paused');
     },
     onDetached: () {
-        debugPrint('CurrentState: detached');
+        debugPrint('state is detached');
     },
 );
 ```
