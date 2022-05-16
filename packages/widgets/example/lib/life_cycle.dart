@@ -40,32 +40,51 @@ class MyHomePageState extends State<MyHomePage> {
     return LifeCycle(
       onInactive: () {
         setState(() {
-          debugPrint('state is inactive');
+          debugPrint('CurrentState: inactive');
           currentAppLifeCycleStateString = 'inactive';
         });
       },
       onResumed: () {
         setState(() {
-          debugPrint('state is resumed');
+          debugPrint('CurrentState: resumed');
           currentAppLifeCycleStateString = 'resumed';
         });
       },
       onPaused: () {
         setState(() {
-          debugPrint('state is paused');
+          debugPrint('CurrentState: paused');
           currentAppLifeCycleStateString = 'paused';
         });
       },
       onDetached: () {
         setState(() {
-          debugPrint('state is detached');
+          debugPrint('CurrentState: detached');
           currentAppLifeCycleStateString = 'detached';
         });
       },
       child: Scaffold(
         appBar: AppBar(),
         body: Center(
-          child: Text('CurrentState: $currentAppLifeCycleStateString'),
+          child: Column(
+            children: [
+              Text('CurrentState: $currentAppLifeCycleStateString'),
+              LifeCycle(
+                child: const Text('Child'),
+                onInactive: () {
+                  debugPrint('CurrentState: inactive');
+                },
+                onResumed: () {
+                  debugPrint('CurrentState: resumed');
+                },
+                onPaused: () {
+                  debugPrint('CurrentState: paused');
+                },
+                onDetached: () {
+                  debugPrint('CurrentState: detached');
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );
