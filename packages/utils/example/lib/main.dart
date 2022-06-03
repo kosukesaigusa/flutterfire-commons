@@ -1,3 +1,4 @@
+import 'package:example_utils/sealed_sample.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:utils/utils.dart';
@@ -50,6 +51,7 @@ class MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text('$year 年 $month 月の最終日は ${lastDayOfMonth(year, month)}日です。'),
+            SealedSample(),
           ],
         ),
       ),
