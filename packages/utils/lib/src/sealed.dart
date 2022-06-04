@@ -2,28 +2,26 @@ import 'package:meta/meta.dart';
 
 @sealed
 abstract class Result<T> {
-  R whenWithResult<R>(
-    R Function(Success<T>) success,
-    R Function(Error) error,
+  R when<R>(
+    R Function(T) success,
+    R Function(Exception) error,
   ) {
     if (this is Success<T>) {
-      return success(this as Success<T>);
+      return success((this as Success<T>).value);
     } else if (this is Error) {
-      return error(this as Error);
+      return error((this as Error).exception);
     } else {
-      throw Exception('Unhendled part, could be anything');
+      throw Exception('Unhandled part, could be anything');
     }
   }
 }
 
 class Success<T> extends Result<T> {
-  final T value;
-
   Success(this.value);
+  final T value;
 }
 
 class Error<T> extends Result<T> {
-  final Exception exception;
-
   Error(this.exception);
+  final Exception exception;
 }

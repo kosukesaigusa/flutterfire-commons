@@ -5,7 +5,7 @@ class SealedSample extends StatelessWidget {
   SealedSample({Key? key}) : super(key: key);
 
   /// 返り値とか引数みたいな
-  final Result<String> result = Success("w");
+  final Result<String> result = Success('Success');
   // final Result<String> result = Error(Exception('exception'));
 
   @override
@@ -13,9 +13,9 @@ class SealedSample extends StatelessWidget {
     return Center(
       child: Text(
         /// スッキリ書ける
-        result.whenWithResult(
-          (value) => 'Success',
-          (error) => 'This is an error',
+        result.when(
+          (value) => value,
+          (error) => error.toString(),
         ),
       ),
     );
