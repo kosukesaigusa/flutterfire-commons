@@ -1,0 +1,24 @@
+name: example_routing_with_riverpod
+description: A new Flutter project.
+publish_to: 'none'
+version: 0.0.1
+
+environment:
+  sdk: '>=2.17.1 <3.0.0'
+  flutter: '>=3.0.1'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  hooks_riverpod:
+  routing_with_riverpod:
+    path: ../
+  tuple:
+
+dev_dependencies:
+  flutter_lints: ^1.0.0
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
