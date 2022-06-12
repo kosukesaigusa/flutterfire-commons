@@ -1,5 +1,5 @@
 name: listen_with_riverpod
-description: A new Flutter project.
+description: A sample of Riverpod listen
 version: 0.0.1
 
 environment:

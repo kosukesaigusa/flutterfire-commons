@@ -8,8 +8,6 @@ environment:
   flutter: '>=2.10.4'
 
 dependencies:
-  cloud_firestore:
-  firebase_core:
   flutter:
     sdk: flutter
   listen_with_riverpod:
