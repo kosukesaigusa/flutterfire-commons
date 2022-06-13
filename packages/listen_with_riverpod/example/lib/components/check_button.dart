@@ -1,7 +1,7 @@
-import 'package:example_listen_with_riverpod/components/answer_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import 'answer_text_field.dart';
 import 'problem_state.dart';
 
 /// 答え合わせボタン

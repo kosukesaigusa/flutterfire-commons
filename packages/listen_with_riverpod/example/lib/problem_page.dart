@@ -1,8 +1,8 @@
-import 'package:example_listen_with_riverpod/components/check_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'components/answer_text_field.dart';
+import 'components/check_button.dart';
 import 'components/problem_sentence.dart';
 import 'components/problem_state.dart';
 import 'components/result_dialog.dart';
