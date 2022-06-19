@@ -28,7 +28,7 @@ class ReposPage extends HookConsumerWidget {
 
   static const path = '/';
   static const name = 'ReposPage';
-  static String location = path;
+  static const location = path;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
