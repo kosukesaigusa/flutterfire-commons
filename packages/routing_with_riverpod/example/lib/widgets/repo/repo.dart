@@ -97,11 +97,7 @@ class RepoItemWidget extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const ShimmerWidget.rectangular(
-                    width: 120,
-                    height: 16,
-                    borderRadius: 8,
-                  ),
+                  const ShimmerWidget.rectangular(width: 120, height: 16, borderRadius: 8),
                   const Gap(8),
                   for (var i = 0; i < 2; i++) ...[
                     const ShimmerWidget.rectangular(
@@ -111,11 +107,6 @@ class RepoItemWidget extends StatelessWidget {
                     ),
                     const Gap(8),
                   ],
-                  const ShimmerWidget.rectangular(
-                    width: 200,
-                    height: 12,
-                    borderRadius: 8,
-                  ),
                 ],
               ),
             ),
@@ -123,17 +114,9 @@ class RepoItemWidget extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: const [
-                ShimmerWidget.rectangular(
-                  width: 100,
-                  height: 12,
-                  borderRadius: 8,
-                ),
+                ShimmerWidget.rectangular(width: 100, height: 12, borderRadius: 8),
                 Gap(8),
-                ShimmerWidget.rectangular(
-                  width: 100,
-                  height: 12,
-                  borderRadius: 8,
-                ),
+                ShimmerWidget.rectangular(width: 100, height: 12, borderRadius: 8),
               ],
             ),
           ],
