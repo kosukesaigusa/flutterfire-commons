@@ -6,6 +6,7 @@ import '../models/repo/repo.dart';
 import '../repositories/repo_repository.dart';
 import '../routes/app_router_state.dart';
 import '../utils/exceptions/app_exception.dart';
+import '../widgets/common/error.dart';
 
 /// AppRouterState.extra に Repo インスタンスが見つかればそれを、
 /// 見つからなければ、AppRouterState.params（パスパラメータ）から得られる
@@ -52,7 +53,7 @@ class RepoDetailPage extends HookConsumerWidget {
         padding: const EdgeInsets.symmetric(horizontal: 16),
         child: ref.watch(repoFutureProvider).when<Widget>(
               data: (repo) => RepoItemWidget(repo: repo),
-              error: (_, __) => const SizedBox(),
+              error: (e, stackTrace) => AppErrorWidget(errorObject: e, stackTrace: stackTrace),
               loading: () => RepoItemWidget.shimmer,
             ),
       ),

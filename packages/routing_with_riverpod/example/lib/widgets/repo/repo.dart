@@ -49,10 +49,6 @@ class RepoItemWidget extends StatelessWidget {
                     overflow: TextOverflow.ellipsis,
                     // style: context.bodySmall,
                   ),
-                  // Text(
-                  //   'Updated: ${repo.updatedAt.toString().substring(0, 10)}',
-                  //   // style: context.bodySmall,
-                  // ),
                 ],
               ),
             ),

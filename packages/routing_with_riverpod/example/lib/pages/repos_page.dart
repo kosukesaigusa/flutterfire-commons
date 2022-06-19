@@ -7,6 +7,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../constants/style.dart';
 import '../models/api/search_repos_response/search_repos_response.dart';
 import '../repositories/repo_repository.dart';
+import '../widgets/common/error.dart';
 import '../widgets/repo/repo.dart';
 
 /// q=flutter で GitHub の Search Repositories API を コールし、
@@ -85,7 +86,8 @@ class ReposPage extends HookConsumerWidget {
                         },
                       );
                     },
-                    error: (_, __) => const SizedBox(),
+                    error: (e, stackTrace) =>
+                        AppErrorWidget(errorObject: e, stackTrace: stackTrace),
                     loading: () => ListView.builder(
                       padding: const EdgeInsets.only(top: 8, bottom: 32),
                       itemCount: 10,
