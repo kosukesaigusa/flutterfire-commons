@@ -22,7 +22,7 @@ class FetchRepoResponse with _$FetchRepoResponse {
         <String, dynamic>{
           'success': baseResponseData.success,
           'message': baseResponseData.message,
-          ...baseResponseData.data,
+          'repo': baseResponseData.data,
         },
       );
 }

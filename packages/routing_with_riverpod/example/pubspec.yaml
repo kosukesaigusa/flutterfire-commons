@@ -14,6 +14,7 @@ dependencies:
   dio_cookie_manager:
   flutter:
     sdk: flutter
+  flutter_hooks:
   font_awesome_flutter:
   freezed:
   freezed_annotation:

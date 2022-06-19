@@ -48,11 +48,14 @@ class RepoDetailPage extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       appBar: AppBar(title: const Text('Repo Detail')),
-      body: ref.watch(repoFutureProvider).when(
-            data: (repo) => RepoItemWidget(repo: repo),
-            error: (_, __) => const SizedBox(),
-            loading: () => RepoItemWidget.shimmer,
-          ),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        child: ref.watch(repoFutureProvider).when<Widget>(
+              data: (repo) => RepoItemWidget(repo: repo),
+              error: (_, __) => const SizedBox(),
+              loading: () => RepoItemWidget.shimmer,
+            ),
+      ),
     );
   }
 }

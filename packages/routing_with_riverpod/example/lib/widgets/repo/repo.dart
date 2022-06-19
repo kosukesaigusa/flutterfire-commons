@@ -25,7 +25,7 @@ class RepoItemWidget extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+        padding: const EdgeInsets.symmetric(vertical: 8),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -49,10 +49,10 @@ class RepoItemWidget extends StatelessWidget {
                     overflow: TextOverflow.ellipsis,
                     // style: context.bodySmall,
                   ),
-                  Text(
-                    'Updated: ${repo.updatedAt.toString().substring(0, 10)}',
-                    // style: context.bodySmall,
-                  ),
+                  // Text(
+                  //   'Updated: ${repo.updatedAt.toString().substring(0, 10)}',
+                  //   // style: context.bodySmall,
+                  // ),
                 ],
               ),
             ),
@@ -90,7 +90,7 @@ class RepoItemWidget extends StatelessWidget {
   }
 
   static Widget get shimmer => Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+        padding: const EdgeInsets.symmetric(vertical: 8),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
