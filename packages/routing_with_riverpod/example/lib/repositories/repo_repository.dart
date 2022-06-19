@@ -15,7 +15,7 @@ class RepoRepository {
 
   /// 入力したキーワードで GET /search/repositories API をコールして、
   /// ヒットする GitHub リポジトリ一覧を含む SearchReposResponse を返す。
-  Future<SearchReposResponse> searchRepositories({
+  Future<SearchReposResponse> searchRepos({
     required String q,
     int page = 1,
     int perPage = 10,

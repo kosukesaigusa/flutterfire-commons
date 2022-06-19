@@ -14,7 +14,7 @@ import '../widgets/repo/repo.dart';
 /// そのレスポンスを提供する FutureProvider。
 final searchRepoResponseFutureProvider =
     FutureProvider.autoDispose<SearchReposResponse>((ref) async {
-  final response = await ref.read(repoRepositoryProvider).searchRepositories(
+  final response = await ref.read(repoRepositoryProvider).searchRepos(
         q: 'flutter',
         page: 1,
         perPage: 10,
