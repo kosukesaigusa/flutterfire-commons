@@ -44,6 +44,7 @@ class AppRouter {
   /// パス、パスパラメータ、クエリパラメータの解析を行い、
   /// 対応する AppRoute と extra も含めて AppRouterState を返す。
   /// その 2 つのインスタンスをまとめて返したいだけで、Tuple であることに深い理由はない。
+  /// それらまとめたクラスを定義しても良いかもしれないが、他で使用するわけでもないので Tuple にした。
   Tuple2<AppRoute, AppRouterState> _analyzeRoute(RouteSettings routeSettings) {
     final location = routeSettings.name ?? '';
     debugPrint('***');
@@ -83,7 +84,9 @@ class AppRouter {
     );
   }
 
-  ///
+  /// location から path パターン (String) とクエリパラメータ (Map<String, String>)を抽出して返す。
+  /// その 2 つをまとめて返したいだけで、Tuple であることに深い理由はない。
+  /// それらまとめたクラスを定義しても良いかもしれないが、他で使用するわけでもないので Tuple にした。
   Tuple2<String, Map<String, String>> _analyzePath(String location) {
     var path = location;
     var queryParams = <String, String>{};
