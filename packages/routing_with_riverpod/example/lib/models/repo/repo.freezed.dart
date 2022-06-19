@@ -26,7 +26,7 @@ mixin _$Repo {
   String get htmlUrl => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
   DateTime? get updatedAt => throw _privateConstructorUsedError;
-  int get starGazersCount => throw _privateConstructorUsedError;
+  int get stargazersCount => throw _privateConstructorUsedError;
   int get forksCount => throw _privateConstructorUsedError;
   int get watchersCount => throw _privateConstructorUsedError;
 
@@ -46,7 +46,7 @@ abstract class $RepoCopyWith<$Res> {
       String htmlUrl,
       String description,
       DateTime? updatedAt,
-      int starGazersCount,
+      int stargazersCount,
       int forksCount,
       int watchersCount});
 
@@ -69,7 +69,7 @@ class _$RepoCopyWithImpl<$Res> implements $RepoCopyWith<$Res> {
     Object? htmlUrl = freezed,
     Object? description = freezed,
     Object? updatedAt = freezed,
-    Object? starGazersCount = freezed,
+    Object? stargazersCount = freezed,
     Object? forksCount = freezed,
     Object? watchersCount = freezed,
   }) {
@@ -98,9 +98,9 @@ class _$RepoCopyWithImpl<$Res> implements $RepoCopyWith<$Res> {
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      starGazersCount: starGazersCount == freezed
-          ? _value.starGazersCount
-          : starGazersCount // ignore: cast_nullable_to_non_nullable
+      stargazersCount: stargazersCount == freezed
+          ? _value.stargazersCount
+          : stargazersCount // ignore: cast_nullable_to_non_nullable
               as int,
       forksCount: forksCount == freezed
           ? _value.forksCount
@@ -133,7 +133,7 @@ abstract class _$$_RepoCopyWith<$Res> implements $RepoCopyWith<$Res> {
       String htmlUrl,
       String description,
       DateTime? updatedAt,
-      int starGazersCount,
+      int stargazersCount,
       int forksCount,
       int watchersCount});
 
@@ -158,7 +158,7 @@ class __$$_RepoCopyWithImpl<$Res> extends _$RepoCopyWithImpl<$Res>
     Object? htmlUrl = freezed,
     Object? description = freezed,
     Object? updatedAt = freezed,
-    Object? starGazersCount = freezed,
+    Object? stargazersCount = freezed,
     Object? forksCount = freezed,
     Object? watchersCount = freezed,
   }) {
@@ -187,9 +187,9 @@ class __$$_RepoCopyWithImpl<$Res> extends _$RepoCopyWithImpl<$Res>
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      starGazersCount: starGazersCount == freezed
-          ? _value.starGazersCount
-          : starGazersCount // ignore: cast_nullable_to_non_nullable
+      stargazersCount: stargazersCount == freezed
+          ? _value.stargazersCount
+          : stargazersCount // ignore: cast_nullable_to_non_nullable
               as int,
       forksCount: forksCount == freezed
           ? _value.forksCount
@@ -213,7 +213,7 @@ class _$_Repo implements _Repo {
       this.htmlUrl = '',
       this.description = '',
       this.updatedAt,
-      this.starGazersCount = 0,
+      this.stargazersCount = 0,
       this.forksCount = 0,
       this.watchersCount = 0});
 
@@ -238,7 +238,7 @@ class _$_Repo implements _Repo {
   final DateTime? updatedAt;
   @override
   @JsonKey()
-  final int starGazersCount;
+  final int stargazersCount;
   @override
   @JsonKey()
   final int forksCount;
@@ -248,7 +248,7 @@ class _$_Repo implements _Repo {
 
   @override
   String toString() {
-    return 'Repo(id: $id, name: $name, owner: $owner, htmlUrl: $htmlUrl, description: $description, updatedAt: $updatedAt, starGazersCount: $starGazersCount, forksCount: $forksCount, watchersCount: $watchersCount)';
+    return 'Repo(id: $id, name: $name, owner: $owner, htmlUrl: $htmlUrl, description: $description, updatedAt: $updatedAt, stargazersCount: $stargazersCount, forksCount: $forksCount, watchersCount: $watchersCount)';
   }
 
   @override
@@ -264,7 +264,7 @@ class _$_Repo implements _Repo {
                 .equals(other.description, description) &&
             const DeepCollectionEquality().equals(other.updatedAt, updatedAt) &&
             const DeepCollectionEquality()
-                .equals(other.starGazersCount, starGazersCount) &&
+                .equals(other.stargazersCount, stargazersCount) &&
             const DeepCollectionEquality()
                 .equals(other.forksCount, forksCount) &&
             const DeepCollectionEquality()
@@ -281,7 +281,7 @@ class _$_Repo implements _Repo {
       const DeepCollectionEquality().hash(htmlUrl),
       const DeepCollectionEquality().hash(description),
       const DeepCollectionEquality().hash(updatedAt),
-      const DeepCollectionEquality().hash(starGazersCount),
+      const DeepCollectionEquality().hash(stargazersCount),
       const DeepCollectionEquality().hash(forksCount),
       const DeepCollectionEquality().hash(watchersCount));
 
@@ -304,7 +304,7 @@ abstract class _Repo implements Repo {
       final String htmlUrl,
       final String description,
       final DateTime? updatedAt,
-      final int starGazersCount,
+      final int stargazersCount,
       final int forksCount,
       final int watchersCount}) = _$_Repo;
 
@@ -323,7 +323,7 @@ abstract class _Repo implements Repo {
   @override
   DateTime? get updatedAt => throw _privateConstructorUsedError;
   @override
-  int get starGazersCount => throw _privateConstructorUsedError;
+  int get stargazersCount => throw _privateConstructorUsedError;
   @override
   int get forksCount => throw _privateConstructorUsedError;
   @override

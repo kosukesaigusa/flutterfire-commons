@@ -62,7 +62,7 @@ class RepoItemWidget extends StatelessWidget {
                     const Icon(Icons.star, size: 12),
                     const Gap(4),
                     Text(
-                      repo.starGazersCount.withComma,
+                      repo.stargazersCount.withComma,
                     ),
                   ],
                 ),

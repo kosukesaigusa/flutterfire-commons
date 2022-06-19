@@ -14,7 +14,7 @@ class Repo with _$Repo {
     @Default('') String htmlUrl,
     @Default('') String description,
     DateTime? updatedAt,
-    @Default(0) int starGazersCount,
+    @Default(0) int stargazersCount,
     @Default(0) int forksCount,
     @Default(0) int watchersCount,
   }) = _Repo;

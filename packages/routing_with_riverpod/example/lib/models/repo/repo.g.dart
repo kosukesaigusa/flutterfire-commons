@@ -23,8 +23,8 @@ _$_Repo _$$_RepoFromJson(Map<String, dynamic> json) => $checkedCreate(
               $checkedConvert('description', (v) => v as String? ?? ''),
           updatedAt: $checkedConvert('updated_at',
               (v) => v == null ? null : DateTime.parse(v as String)),
-          starGazersCount:
-              $checkedConvert('star_gazers_count', (v) => v as int? ?? 0),
+          stargazersCount:
+              $checkedConvert('stargazers_count', (v) => v as int? ?? 0),
           forksCount: $checkedConvert('forks_count', (v) => v as int? ?? 0),
           watchersCount:
               $checkedConvert('watchers_count', (v) => v as int? ?? 0),
@@ -34,7 +34,7 @@ _$_Repo _$$_RepoFromJson(Map<String, dynamic> json) => $checkedCreate(
       fieldKeyMap: const {
         'htmlUrl': 'html_url',
         'updatedAt': 'updated_at',
-        'starGazersCount': 'star_gazers_count',
+        'stargazersCount': 'stargazers_count',
         'forksCount': 'forks_count',
         'watchersCount': 'watchers_count'
       },
@@ -47,7 +47,7 @@ Map<String, dynamic> _$$_RepoToJson(_$_Repo instance) => <String, dynamic>{
       'html_url': instance.htmlUrl,
       'description': instance.description,
       'updated_at': instance.updatedAt?.toIso8601String(),
-      'star_gazers_count': instance.starGazersCount,
+      'stargazers_count': instance.stargazersCount,
       'forks_count': instance.forksCount,
       'watchers_count': instance.watchersCount,
     };
