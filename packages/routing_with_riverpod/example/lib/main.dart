@@ -1,5 +1,4 @@
 import 'package:example_routing_with_riverpod/routes/app_router.dart';
-import 'package:example_routing_with_riverpod/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -32,8 +31,8 @@ class App extends HookConsumerWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: ref.watch(appRouterProvider(appRoutes)).initialRoute,
-      onGenerateRoute: ref.watch(appRouterProvider(appRoutes)).onGenerateRoute,
+      initialRoute: ref.watch(appRouterProvider).initialRoute,
+      onGenerateRoute: ref.watch(appRouterProvider).onGenerateRoute,
     );
   }
 }

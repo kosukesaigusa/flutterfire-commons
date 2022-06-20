@@ -7,10 +7,9 @@ import '../pages/not_found_page.dart';
 import '../utils/exceptions/common_exceptions.dart';
 import 'app_route.dart';
 import 'app_router_state.dart';
+import 'app_routes.dart';
 
-final appRouterProvider = Provider.family<AppRouter, List<AppRoute>>(
-  (_, appRoutes) => AppRouter(appRoutes),
-);
+final appRouterProvider = Provider<AppRouter>((_) => AppRouter(appRoutes));
 
 class AppRouter {
   AppRouter(this.appRoutes);
