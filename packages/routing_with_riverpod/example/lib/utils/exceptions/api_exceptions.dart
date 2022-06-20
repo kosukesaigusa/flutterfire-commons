@@ -1,3 +1,4 @@
+import '../../constants/string.dart';
 import 'app_exception.dart';
 
 /// HTTP 通信時に使用する例外型。
@@ -5,7 +6,7 @@ class ApiException extends AppException implements Exception {
   const ApiException({
     super.code,
     super.message,
-    super.defaultMessage = 'サーバとの通信に失敗しました。',
+    super.defaultMessage = serverConnectionFailure,
   });
 }
 

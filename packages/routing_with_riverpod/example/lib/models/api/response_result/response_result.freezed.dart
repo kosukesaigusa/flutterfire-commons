@@ -245,7 +245,7 @@ class __$$FailureCopyWithImpl<$Res> extends _$ResponseResultCopyWithImpl<$Res>
 /// @nodoc
 
 class _$Failure implements Failure {
-  const _$Failure({this.message = 'サーバとの通信に失敗しました。'});
+  const _$Failure({this.message = serverConnectionFailure});
 
   @override
   @JsonKey()
