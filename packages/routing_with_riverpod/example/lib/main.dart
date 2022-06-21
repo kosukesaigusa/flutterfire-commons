@@ -1,47 +1,38 @@
+import 'package:example_routing_with_riverpod/routes/app_router.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:path_provider/path_provider.dart';
 
-void main() async {
-  runApp(const MyApp());
+import 'utils/application_documents_directory.dart';
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+  runApp(
+    ProviderScope(
+      overrides: <Override>[
+        applicationDocumentsDirectoryProvider.overrideWithValue(
+          await getApplicationDocumentsDirectory(),
+        ),
+      ],
+      child: const App(),
+    ),
+  );
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class App extends HookConsumerWidget {
+  const App({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Routing with Riverpod',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key}) : super(key: key);
-
-  static const path = '/my-home';
-  static const name = 'MyHome';
-
-  @override
-  MyHomePageState createState() => MyHomePageState();
-}
-
-class MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
-            Text('You have pushed the button this many times'),
-          ],
-        ),
-      ),
+      initialRoute: ref.watch(appRouterProvider).initialRoute,
+      onGenerateRoute: ref.watch(appRouterProvider).onGenerateRoute,
     );
   }
 }

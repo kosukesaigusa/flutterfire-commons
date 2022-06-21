@@ -2,11 +2,12 @@ include: package:flutter_lints/flutter.yaml
 
 analyzer:
   exclude:
-    - packages/**/**.freezed.dart'
-    - packages/**/**.g.dart'
+    - '**/*.g.dart'
+    - '**/*.freezed.dart'
   errors:
     missing_required_param: warning
     missing_return: warning
+    invalid_annotation_target: ignore
   strong-mode:
     implicit-casts: false
     implicit-dynamic: false

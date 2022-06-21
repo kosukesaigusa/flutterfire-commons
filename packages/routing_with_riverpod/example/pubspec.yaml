@@ -8,18 +8,37 @@ environment:
   flutter: '>=3.0.1'
 
 dependencies:
+  cached_network_image:
+  connectivity_plus:
+  dio:
+  dio_cookie_manager:
   flutter:
     sdk: flutter
-  hooks_riverpod:
+  flutter_hooks:
+  font_awesome_flutter:
+  freezed:
+  freezed_annotation:
+  gap:
+  go_router:
+  hooks_riverpod: ^2.0.0-dev.9
+  intl:
+  json_annotation: ^4.5.0
+  path_provider:
   path_to_regexp:
   routing_with_riverpod:
     path: ../
+  shimmer:
   tuple:
 
 dev_dependencies:
-  flutter_lints: ^1.0.0
+  build_runner:
+  flutter_driver:
+    sdk: flutter
+  flutter_lints:
   flutter_test:
     sdk: flutter
+  json_serializable: ^6.1.6
+  pedantic_mono:
 
 flutter:
   uses-material-design: true
