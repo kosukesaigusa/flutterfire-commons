@@ -4,16 +4,19 @@ publish_to: 'none'
 version: 0.0.1
 
 environment:
-  sdk: '>=2.16.2 <3.0.0'
+  sdk: '>=2.17.0 <3.0.0'
   flutter: '>=2.10.4'
 
 dependencies:
+  adaptive_navigation: ^0.0.7
   cloud_firestore:
   firebase_core:
   flutter:
     sdk: flutter
+  flutter_riverpod: ^1.0.4
   go_router_samples:
     path: ../
+  package_info_plus: ^1.4.2
 
 dev_dependencies:
   flutter_lints: ^1.0.0
