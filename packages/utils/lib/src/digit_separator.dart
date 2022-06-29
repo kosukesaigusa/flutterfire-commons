@@ -1,4 +1,10 @@
 /// 桁区切り
 import 'package:intl/intl.dart';
 
-class DigitSeparator {}
+class DigitSeparator {
+  String addSeparatorToNum({required int num}) {
+    final formatter = NumberFormat('#,###');
+    String numWithSeparator = formatter.format(num);
+    return numWithSeparator;
+  }
+}
