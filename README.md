@@ -51,7 +51,7 @@ https://gorouter.dev/transitions
 BottomNavigationBarの各タブではそれぞれ異なる画面遷移のサンプルを用意しました。
 
 ## Simple Navigation Screen
-画像
+<img width="300" src="https://user-images.githubusercontent.com/44666053/176473115-065c2925-33d5-426c-8d8d-149bce6ff9cf.png">
 
 サブルートへの画面遷移
 https://gorouter.dev/sub-routes
@@ -100,7 +100,7 @@ onTap: () => context.go('/simple/number/$id');
 ```
 
 ## Overlay Navigation Screen
-画像
+<img width="300" src="https://user-images.githubusercontent.com/44666053/176473132-92f24e7e-3a98-4aa5-a94f-efddf9c2a9e0.png">
 
 DialogやModalBottomSheetの挙動のサンプルです。
 
@@ -144,7 +144,7 @@ DialogやModalBottomSheetはGoRouterで定義されたページスタックで�
 ```
 
 ## TabBar Navigation Screen
-画像
+<img width="300" src="https://user-images.githubusercontent.com/44666053/176473138-43dc766d-549d-4ead-a530-fc36be171ecd.png">
 
 `BottomNavigationBar`と`TabBar`を併用した挙動のサンプルです。
 
