@@ -32,13 +32,13 @@ final routerProvider = Provider(
             ),
           ),
           GoRoute(
-              name: 'number',
-              path: 'number/:id',
-              builder: (context, state) {
-                final id = state.params['id']!;
-                debugPrint('id is $id');
-                return NumberScreen(number: id);
-              })
+            name: 'number',
+            path: 'number/:id',
+            builder: (context, state) {
+              final id = state.params['id']!;
+              return NumberScreen(number: id);
+            },
+          ),
         ],
       ),
       GoRoute(

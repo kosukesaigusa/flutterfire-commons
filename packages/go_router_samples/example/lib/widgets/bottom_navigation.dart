@@ -1,5 +1,4 @@
-import 'package:example_go_router_samples/app_router.dart';
-import 'package:example_go_router_samples/providers/botton_navigation_provider.dart';
+import 'package:example_go_router_samples/providers/bottom_navigation_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -30,17 +29,14 @@ class _BottomNavState extends ConsumerState<BottomNav> {
               currentIndex: ref.watch(bottomNavIndexProvider),
               onTap: (i) {
                 ref.watch(bottomNavIndexProvider.notifier).state = i;
-                debugPrint('index: $i');
                 switch (i) {
                   case 0:
                     context.go('/simple');
                     break;
                   case 1:
-                    debugPrint('index1 pressed');
                     context.go('/overlay');
                     break;
                   case 2:
-                    debugPrint('index2 pressed');
                     context.go('/tab_bar');
                     break;
                 }

@@ -8,7 +8,6 @@ environment:
   flutter: '>=2.10.4'
 
 dependencies:
-  adaptive_navigation: ^0.0.7
   cloud_firestore:
   firebase_core:
   flutter:

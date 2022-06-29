@@ -21,7 +21,6 @@ class OverlayNavigationScreen extends StatelessWidget {
                   ElevatedButton(
                     onPressed: () {
                       _showDialog(context);
-                      // showAboutDialog(context: context);
                     },
                     style: ElevatedButton.styleFrom(
                       fixedSize: const Size(180, 45),
@@ -60,24 +59,24 @@ class OverlayNavigationScreen extends StatelessWidget {
 
   Future<void> _showDialog(BuildContext context) async {
     await showDialog<void>(
-        context: context,
-        useRootNavigator: true,
-        builder: (context) {
-          return AlertDialog(
-            title: const Text('This is the Dialog'),
-            content: const Text('This is the content'),
-            actions: [
-              TextButton(
-                child: const Text('Cancel'),
-                onPressed: () => Navigator.of(context).pop(),
-              ),
-              TextButton(
-                child: const Text('OK'),
-                onPressed: () => Navigator.of(context).pop(),
-              ),
-            ],
-          );
-        });
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: const Text('This is the Dialog'),
+          content: const Text('This is the content'),
+          actions: [
+            TextButton(
+              child: const Text('Cancel'),
+              onPressed: () => Navigator.of(context).pop(),
+            ),
+            TextButton(
+              child: const Text('OK'),
+              onPressed: () => Navigator.of(context).pop(),
+            ),
+          ],
+        );
+      },
+    );
   }
 
   Future<void> _showModalBottomSheet(BuildContext context) async {
