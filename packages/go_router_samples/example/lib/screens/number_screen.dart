@@ -15,7 +15,7 @@ class NumberScreen extends StatelessWidget {
             left: 16,
             top: 32,
             child: IconButton(
-              onPressed: () => context.pop(),
+              onPressed: () => GoRouter.of(context).pop(),
               icon: const Icon(Icons.arrow_back),
               iconSize: 36,
             ),

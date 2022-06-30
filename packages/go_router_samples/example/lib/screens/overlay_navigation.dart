@@ -1,5 +1,14 @@
 import 'package:flutter/material.dart';
 
+/// DialogやModalBottomSheetの挙動のサンプル
+///
+/// DialogやModalBottomSheetはnavigationBuilderで定義したNavigatorクラスのページスタック上に
+/// 生成される為、`GoRouter.of(context).pop()`ではなく、`Navigator.of(context).pop()`を使う必要がある。
+///
+/// またModalBottomSheetでは`useRootNavigator`パラメータで明示的にRootに位置するNavigatorクラスか、
+/// 一番近いNavigatorクラス(今回はGoRouterクラス)かを選択する事が出来る。
+///
+/// ただModalBottomSheetのpopはGoRouterでのpopに未対応の為、Navigatorのpopを使う必要がある。[参考](https://github.com/flutter/flutter/issues/100933)
 class OverlayNavigationScreen extends StatelessWidget {
   const OverlayNavigationScreen({Key? key}) : super(key: key);
 
@@ -67,6 +76,7 @@ class OverlayNavigationScreen extends StatelessWidget {
           actions: [
             TextButton(
               child: const Text('Cancel'),
+              // RootのNavigatorクラスの上に生成されている為、Navigatorのpopを使用
               onPressed: () => Navigator.of(context).pop(),
             ),
             TextButton(
@@ -82,6 +92,7 @@ class OverlayNavigationScreen extends StatelessWidget {
   Future<void> _showModalBottomSheet(BuildContext context) async {
     await showModalBottomSheet<bool>(
       context: context,
+      // trueにする事でRootのNavigatorクラス上にModalBottomSheetを表示
       useRootNavigator: true,
       builder: (context) {
         return SafeArea(
@@ -108,6 +119,8 @@ class OverlayNavigationScreen extends StatelessWidget {
   Future<void> _showNestedModalBottomSheet(BuildContext context) async {
     await showModalBottomSheet<bool>(
       context: context,
+      // falseの場合、一番近いNavigatorクラス上にModalBottomSheetを表示。(デフォルトがfalseの為、省略可)
+      useRootNavigator: false,
       builder: (context) {
         return Container(
           padding: const EdgeInsets.all(24),
@@ -118,6 +131,7 @@ class OverlayNavigationScreen extends StatelessWidget {
               const Image(image: AssetImage('assets/images/flutter_icon.png')),
               const SizedBox(height: 24),
               TextButton(
+                // GoRouterのpopがModalBottomSheet未対応の為、Navigator.popを使用
                 onPressed: () => Navigator.of(context).pop(),
                 child: const Text('GO BACK'),
               ),

@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+/// サブルートへの遷移、引数を渡す遷移のサンプル
+///
 class SimpleNavigationScreen extends ConsumerWidget {
   const SimpleNavigationScreen({super.key});
 
@@ -36,6 +38,7 @@ class SimpleNavigationScreen extends ConsumerWidget {
                     padding: const EdgeInsets.only(right: 16, bottom: 64),
                     child: FloatingActionButton.extended(
                       onPressed: () {
+                        // サブルートへの遷移
                         context.go('/simple/login');
                       },
                       label: const Text(
@@ -75,6 +78,7 @@ class NavigationContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
+        // 引数を渡す遷移
         context.go('/simple/number/$id');
       },
       child: Container(

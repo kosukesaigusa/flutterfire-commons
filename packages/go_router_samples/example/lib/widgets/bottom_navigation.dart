@@ -29,6 +29,7 @@ class _BottomNavState extends ConsumerState<BottomNav> {
               currentIndex: ref.watch(bottomNavIndexProvider),
               onTap: (i) {
                 ref.watch(bottomNavIndexProvider.notifier).state = i;
+                // indexに応じてGoRouterのページに遷移
                 switch (i) {
                   case 0:
                     context.go('/simple');
@@ -43,21 +44,18 @@ class _BottomNavState extends ConsumerState<BottomNav> {
               },
               items: const [
                 BottomNavigationBarItem(
-                    // 永続化したままのシンプルな遷移
                     icon: Icon(
                       Icons.arrow_forward,
                       color: Colors.grey,
                     ),
                     label: 'Simple'),
                 BottomNavigationBarItem(
-                    // 永続化した場合のダイアログ、ボトムシート
                     icon: Icon(
                       Icons.replay,
                       color: Colors.grey,
                     ),
                     label: 'Overlay'),
                 BottomNavigationBarItem(
-                    // tabBarのネスト
                     icon: Icon(
                       Icons.tab,
                       color: Colors.grey,

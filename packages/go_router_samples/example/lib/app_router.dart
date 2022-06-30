@@ -9,6 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+// GoRouterクラスはRiverpodで依存注入
 final routerProvider = Provider(
   (ref) => GoRouter(
     initialLocation: '/simple',
@@ -16,6 +17,7 @@ final routerProvider = Provider(
       GoRoute(
         name: 'simple',
         path: '/simple',
+        // BottomNavigationBarでの画面遷移に見える様、遷移時のアニメーションを調整
         pageBuilder: (context, state) => CustomTransitionPage(
             key: state.pageKey,
             child: const SimpleNavigationScreen(),
@@ -23,6 +25,7 @@ final routerProvider = Provider(
             transitionsBuilder:
                 (context, animation, secondaryAnimation, child) => child),
         routes: [
+          // サブルートへの画面遷移のサンプル
           GoRoute(
             name: 'login',
             path: 'login',
@@ -31,6 +34,7 @@ final routerProvider = Provider(
               child: const LoginScreen(),
             ),
           ),
+          // 引数を渡す画面遷移のサンプル
           GoRoute(
             name: 'number',
             path: 'number/:id',
@@ -44,6 +48,7 @@ final routerProvider = Provider(
       GoRoute(
         name: 'overlay',
         path: '/overlay',
+        // BottomNavigationBarでの画面遷移に見える様、遷移時のアニメーションを調整
         pageBuilder: (context, state) => CustomTransitionPage(
             key: state.pageKey,
             child: const OverlayNavigationScreen(),
@@ -80,6 +85,7 @@ final routerProvider = Provider(
             ),
           ),
         ],
+        // BottomNavigationBarでの画面遷移に見える様、遷移時のアニメーションを調整
         pageBuilder: (context, state) => CustomTransitionPage(
           key: state.pageKey,
           child: const TabBarNavigationScreen(),
@@ -96,7 +102,8 @@ final routerProvider = Provider(
       ),
     ),
     navigatorBuilder: (context, state, child) {
-      //
+      // GoRouterクラスの上に常に重なるNavigatorクラスを定義。
+      // このNavigatorクラスにBottomNavigatioBarを渡す事で永続化を実現。
       return Navigator(
         onPopPage: (route, dynamic __) => false,
         pages: [

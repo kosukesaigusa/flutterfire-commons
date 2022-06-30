@@ -11,7 +11,7 @@ class LoginScreen extends StatelessWidget {
         title: const Text('Login Page'),
         leading: BackButton(
           color: Colors.white,
-          onPressed: () => context.pop(),
+          onPressed: () => GoRouter.of(context).pop(),
         ),
       ),
       body: const Center(
