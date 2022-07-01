@@ -82,7 +82,7 @@ class TabA extends StatelessWidget {
           children: [
             ElevatedButton(
               onPressed: () {
-                context.goNamed('pageA');
+                context.go('/tab_bar/page_a');
               },
               style: ElevatedButton.styleFrom(primary: Colors.red),
               child: const Text('GO TO PAGE A'),
@@ -107,7 +107,7 @@ class TabB extends StatelessWidget {
           children: [
             ElevatedButton(
               onPressed: () {
-                context.goNamed('pageB');
+                context.go('/tab_bar/page_b');
               },
               style: ElevatedButton.styleFrom(primary: Colors.green),
               child: const Text('GO TO PAGE B'),
@@ -132,7 +132,7 @@ class TabC extends StatelessWidget {
           children: [
             ElevatedButton(
               onPressed: () {
-                context.goNamed('pageC');
+                context.go('/tab_bar/page_c');
               },
               style: ElevatedButton.styleFrom(primary: Colors.yellow),
               child: const Text(
