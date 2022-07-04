@@ -28,7 +28,8 @@ class _BottomNavState extends ConsumerState<BottomNav> {
               type: BottomNavigationBarType.fixed,
               currentIndex: ref.watch(bottomNavIndexProvider),
               onTap: (i) {
-                ref.watch(bottomNavIndexProvider.notifier).state = i;
+                ref.read(bottomNavIndexProvider.notifier).update((state) => i);
+
                 // indexに応じてGoRouterのページに遷移
                 switch (i) {
                   case 0:
