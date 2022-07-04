@@ -17,10 +17,7 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      throw UnsupportedError(
-        'DefaultFirebaseOptions have not been configured for web - '
-        'you can reconfigure this by running the FlutterFire CLI again.',
-      );
+      return web;
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
@@ -28,8 +25,15 @@ class DefaultFirebaseOptions {
       case TargetPlatform.iOS:
         return ios;
       case TargetPlatform.macOS:
+        return macos;
+      case TargetPlatform.windows:
         throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for macos - '
+          'DefaultFirebaseOptions have not been configured for windows - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
+      case TargetPlatform.linux:
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for linux - '
           'you can reconfigure this by running the FlutterFire CLI again.',
         );
       default:
@@ -38,6 +42,16 @@ class DefaultFirebaseOptions {
         );
     }
   }
+
+  static const FirebaseOptions web = FirebaseOptions(
+    apiKey: 'AIzaSyBc1qiRvZ0H2am0p6KdEw9lgKRAncbOCBc',
+    appId: '1:631342105401:web:429400d877a33bee9ddee8',
+    messagingSenderId: '631342105401',
+    projectId: 'flutterfire-commos',
+    authDomain: 'flutterfire-commos.firebaseapp.com',
+    storageBucket: 'flutterfire-commos.appspot.com',
+    measurementId: 'G-G7KJPTJHSL',
+  );
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyBUVChcbh0z4kfE0sVCsJdQaOLZN6sq_ZM',
@@ -48,6 +62,16 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
+    apiKey: 'AIzaSyCQ-RHs_ww7DoMng02WKHoIzOJNkMqqmbs',
+    appId: '1:631342105401:ios:f4deea38fe2dff5f9ddee8',
+    messagingSenderId: '631342105401',
+    projectId: 'flutterfire-commos',
+    storageBucket: 'flutterfire-commos.appspot.com',
+    iosClientId: '631342105401-g7qkp5a941p8c5mt3f7mc4g8cq2l6vlb.apps.googleusercontent.com',
+    iosBundleId: 'com.example.example',
+  );
+
+  static const FirebaseOptions macos = FirebaseOptions(
     apiKey: 'AIzaSyCQ-RHs_ww7DoMng02WKHoIzOJNkMqqmbs',
     appId: '1:631342105401:ios:f4deea38fe2dff5f9ddee8',
     messagingSenderId: '631342105401',
